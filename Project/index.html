@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екатерина Великая</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div id="logo" onclick="slowScroll('#top')">
+            <span>ЕВ</span>
+        </div>
+        <div id="about">
+            <a href="#" onclick="slowScroll('#works')" title="Мои работы">Работы</a>
+            <a href="#" onclick="slowScroll('#tools')" title="которыми пользуюсь">Инструменты</a>
+            <a href="#" onclick="slowScroll('#contacts')" title="для связи со мной">Контакты</a>
+            <a href="#" onclick="slowScroll('#about_me')" ttitle="узнать хотите? тогда нажмите">Обо мне</a>
+            <a href="https://www.instagram.com/velikater" target="_blank" title="Инстаграм">Ins</a>
+            <a href="https://vk.com/velikater" target="_blank" title="Вконтакте">VK</a>
+        </div>
+    </header>
+
+    <div id="top">
+        <h1>Искуство</h1>
+        <h3>как способ жить!</h3>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function slowScroll(id) {
+            $('html','body').animate({
+                scrollTop: $(id).offset().top
+            }, 5000);
+        }
+
+        $(document).on("scroll", function () {
+            if($(window).scrollTop() ===0)
+            $("header").removeClass("fixed");
+            else
+            $("header").attr("class", "fixed");
+        });
+    </script>
+</body>
+</html>
